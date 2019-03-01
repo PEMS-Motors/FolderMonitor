@@ -54,6 +54,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "MonitorHelp";
             this.Text = "Help";
+            this.Load += new System.EventHandler(this.MonitorHelp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
