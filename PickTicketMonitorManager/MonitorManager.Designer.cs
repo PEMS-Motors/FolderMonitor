@@ -13,10 +13,10 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -40,6 +40,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.debugmode_toggle = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.interval_container)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,7 +120,7 @@
             // 
             this.routinetimer_container.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.routinetimer_container.AutoSize = true;
-            this.routinetimer_container.Cursor = System.Windows.Forms.Cursors.SizeNS;
+            this.routinetimer_container.Cursor = System.Windows.Forms.Cursors.Default;
             this.routinetimer_container.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.routinetimer_container.Location = new System.Drawing.Point(246, 132);
             this.routinetimer_container.Name = "routinetimer_container";
@@ -133,6 +134,7 @@
             // 
             // interval_container
             // 
+            this.interval_container.Cursor = System.Windows.Forms.Cursors.Default;
             this.interval_container.Location = new System.Drawing.Point(247, 101);
             this.interval_container.Maximum = new decimal(new int[] {
             604800,
@@ -148,7 +150,7 @@
             this.interval_container.Size = new System.Drawing.Size(45, 20);
             this.interval_container.TabIndex = 32;
             this.interval_container.Value = new decimal(new int[] {
-            300,
+            60,
             0,
             0,
             0});
@@ -184,11 +186,23 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
+            // debugmode_toggle
+            // 
+            this.debugmode_toggle.AutoSize = true;
+            this.debugmode_toggle.Location = new System.Drawing.Point(93, 131);
+            this.debugmode_toggle.Name = "debugmode_toggle";
+            this.debugmode_toggle.Size = new System.Drawing.Size(58, 17);
+            this.debugmode_toggle.TabIndex = 34;
+            this.debugmode_toggle.Text = "Debug";
+            this.debugmode_toggle.UseVisualStyleBackColor = true;
+            this.debugmode_toggle.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // MonitorManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(491, 156);
+            this.Controls.Add(this.debugmode_toggle);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -224,6 +238,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button3;
         public System.Windows.Forms.ListBox watchedfolders_container;
+        private System.Windows.Forms.CheckBox debugmode_toggle;
     }
 }
 

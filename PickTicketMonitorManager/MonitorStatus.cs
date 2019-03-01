@@ -34,6 +34,9 @@ namespace PickTicketHandler {
             //Pass Scanner to this object to work with
             this.Scanner = Scanner;
             this.monitormanager_main = monitormanager_main;
+
+            this.ControlBox = false;
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e) {

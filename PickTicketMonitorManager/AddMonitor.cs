@@ -24,7 +24,8 @@ namespace PickTicketHandler {
             this.MinimizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.Scanner = Scanner;
-            this.monitormanager_main = monitormanager_main;            
+            this.monitormanager_main = monitormanager_main;
+            this.ControlBox = false;
         }
 
         private void AddMonitor_Load(object sender, EventArgs e) {

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PickTicketHandler {
 
@@ -20,6 +21,7 @@ namespace PickTicketHandler {
         private int counter = 0;
         private FolderScanner Scanner;
         private MonitorHelp ChildForm_help;
+        private string log_location = "";
 
         public MonitorManager() {
 
@@ -29,6 +31,7 @@ namespace PickTicketHandler {
             this.MinimizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             Scanner = new FolderScanner(watchedfolders_container);
+            this.ControlBox = false;
         }
 
         private void button3_Click(object sender, EventArgs e) {
@@ -138,8 +141,10 @@ namespace PickTicketHandler {
             counter--;
         }
                 
-        private void MonitorManager_Load(object sender, EventArgs e)
-        {
+        private void MonitorManager_Load(object sender, EventArgs e) {
+            //locate the log file if it exists
+
+            //if it doesn't exist create one
 
         }
 
@@ -205,6 +210,23 @@ namespace PickTicketHandler {
             ChildForm_help = new MonitorHelp();
             ChildForm_help.ShowDialog();
             ChildForm_help = null;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e) {
+
+        }
+
+        public bool GetDebugMode() {
+
+            if(debugmode_toggle.Checked) {
+
+            return true;
+
+            } else {
+
+                return false;
+
+            }
         }
     }
 }
